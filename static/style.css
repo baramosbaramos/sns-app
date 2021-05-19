@@ -1,0 +1,242 @@
+body {
+   margin: 150px 0px;
+   padding: 0;
+   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   background-color: #990000;
+}
+
+
+header {
+   z-index: 9999;
+   padding: 30px 4% 10px;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   background-color: #004400;
+   display: flex;
+   align-items: center;
+}
+.title-link {
+  display: flex;
+}
+.back-home {
+  margin-left: 200px;
+  margin-right: 10px;
+}
+h1 {
+  color: white;
+}
+h2 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+a {
+  color: white;
+}
+footer{
+    z-index: 9999;
+    width: 100%;
+    background-color: #004400;
+    color:  white;
+    text-align: center;
+    padding: 20px 4% 5px;
+    position: fixed;
+    bottom: 0; /*下に固定*/
+    align-items: center;
+}
+
+.file-push {
+  display: flex;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.home-back {
+  background-color: brown;
+}
+
+.room-header {
+  background-color: brown;
+  position: fixed;
+}
+
+.balloon1-left {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #FFCCCC;
+}
+.site-header {
+  position: relative;
+  background-color: #def7ff; }
+
+.site-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; }
+
+
+.balloon6 {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.balloon6 .faceicon {
+  float: left;
+  margin-right: -50px;
+  margin-bottom: 20px;
+  width: 45px;
+}
+
+.balloon6 .faceicon img{
+  width: 45px;
+  height: 45px;
+  border-radius: 70%;
+}
+.balloon6 .chatting {
+  width: 100%;
+  text-align: left;
+}
+.says {
+  display: inline-block;
+  position: relative; 
+  margin: 0 0 0 60px;
+  padding: 5px;
+  max-width: 500px;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 10px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(30deg);
+}
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+.chat_time {
+  color: white;
+}
+
+.image_time {
+  color: white;
+  margin-bottom:20px;
+}
+
+.says_2 {
+  display: inline-block;
+  position: relative; 
+  margin: 0 0 0 60px;
+  padding: 5px;
+  max-width: 500px;
+  border-radius: 12px;
+  background: #b3f1c2;
+}
+
+.says_2:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 10px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #b3f1c2;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(30deg);
+}
+.says_2 p {
+  margin: 0;
+  padding: 20;
+}
+
+.image {
+  padding: 30px 40px 20px 60px;
+}
+label > input {
+display:none; /* アップロードボタンのスタイルを無効にする */
+}
+label {
+margin-left: 10px;
+width: 40px;
+height: 40px;
+color: #AAAAAA; /* ラベルテキストの色を指定する */
+background-color: #336666;/* ラベルの背景色を指定する */
+padding: 10px; /* ラベルとテキスト間の余白を指定する */
+border: double 4px #AAAAAA;/* ラベルのボーダーを指定する */
+text-align: center;
+}
+
+.submit {
+  margin-left: 20px;
+  height: 40px; 
+}
+
+
+.list {
+  display:flex;
+}
+
+.box {
+  padding: 30px;
+}
+
+.home_faceicon {
+  width: 100px;
+  height: 100px;
+  border-radius: 70%;
+}
+.faceicon_text {
+  text-align: center;  
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}

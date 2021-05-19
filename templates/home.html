@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block customcss %}
+<link href="{% static 'style.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+
+{% block header %}
+<header>
+    <div>
+        <h1>Communication people</h1>
+        <div class="title-link">
+            <h3>Hello! {{ user.username }}</h3>
+            <a class="back-home" href="{% url 'logout' %}">Log out</a>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+
+
+{% block content %}
+{% if users %}
+<div>
+    <section class="wrapper">
+    <div class="container">
+        <div class="content">
+            <h2 class="heading">Users</h2>
+            <div class="container">
+                {% for user in users %}
+                <div class="box">
+                    <img src="{{ user.profile.image.url }}" class="home_faceicon" width=200>
+                    <div class="faceicon_text"><a href="{% url 'room' user.pk %}">{{ user.username }}</a></div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+
+{% else %}
+<p> sorry. no users.</p>
+{% endif %}
+{% endblock content %}

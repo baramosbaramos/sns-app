@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static 'style.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block header %}
+<header>
+    <div>
+        <h2>Hello! {{ user.username }}</h2>
+        <div class="title-link">
+            <h3> this Room with {{ partner.username }}</h3>
+            <a class="back-home" href="{% url 'home' %}">back to home </a>
+            <a href="{% url 'logout' %}">Log out</a>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+
+
+{% block content %}
+<body>
+<div>
+    {% for comment in comments %}
+    <div class="balloon6">
+        {% if comment.content or comment.image %}
+            <div class="faceicon">
+                <img {% if comment.sender == user.username %} src="{{ user.profile.image.url }}" {% else %} src="{{ partner.profile.image.url }}" {% endif %}>
+            </div>
+            {% if comment.content == '' %}
+            {% else %}
+                <div class="chatting">
+                    {% if comment.sender == user.username %}<div class="says_2">{% else %}<div class="says">{% endif %}
+                    <p> <font size="5">   {{ comment.content }}  <font></p>
+                    </div>
+                    <font class="chat_time" size="2">{{ comment.time }}  </font>
+                </div>
+            {% endif %}
+            {% if comment.image %}
+                <p></p>
+                <p class="image"><img src="{{ comment.image.url }}" width=300><font class="image_time" size="2">{{ comment.time }}  </font></p>
+            {% endif %}
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+<footer>
+    <form action="{% url 'room' partner.pk %}" method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="file-push">
+        <p><input type="text" name="content" placeholder="message..."></p>
+
+        <label for="file_upload"><input type="file" name="image" id="file_upload"></label>
+
+        <input type="hidden" name="sender" value="{{ user.username }}">
+        <input type="hidden" name="receiver" value="{{ partner.username }}">
+
+        <input class="submit" type="submit" value="▷">
+        </div>
+    </form>
+</footer>
+</body>
+{% endblock content %}

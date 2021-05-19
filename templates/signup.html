@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static 'style.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block content %}
+<body class="text-center">
+    <main class="form-signin">
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <h1 class="h3 mb-3 fw-normal">sign up</h1>
+        <label for="inputEmail" class="visually-hidden">メールアドレス</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="username" name="username" required autofocus>
+        <label for="inputPassword" class="visually-hidden">パスワード</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="password" name="password" required>
+        <label class="visually-hidden">アイコン</label>
+        <input type="file" id="inputIcon" class="form-control" placeholder="icon" name="icon" required>
+
+        <button type="submit" class="w-100 btn btn-lg btn-primary">sign up</button>
+        </form>
+    <main>
+    <p>{{ error }}</p>
+    <p><a href="{% url 'login' %}">login?</a></p>
+</body>
+
+
+
+{% endblock content%}
